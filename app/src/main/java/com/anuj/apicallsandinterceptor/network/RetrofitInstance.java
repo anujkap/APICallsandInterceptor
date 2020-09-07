@@ -2,8 +2,7 @@ package com.anuj.apicallsandinterceptor.network;
 
 import android.content.Context;
 
-import com.facebook.flipper.plugins.network.FlipperOkhttpInterceptor;
-import com.facebook.flipper.plugins.network.NetworkFlipperPlugin;
+import com.facebook.stetho.okhttp3.StethoInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -36,10 +35,12 @@ public class RetrofitInstance {
     /**
      * If you want to increase the timeout period for the requests
      * make the changes in the below code as required.
+     * The StethoInterceptor will send all the requests that you send to your debug pc
+     * to view them go to chrome://inspect and inspect the app.
      */
     private static OkHttpClient getOkHttpClient(Context context) {
         return new OkHttpClient.Builder()
-                .addNetworkInterceptor(new FlipperOkhttpInterceptor(new NetworkFlipperPlugin()))
+                .addNetworkInterceptor(new StethoInterceptor())
                 .readTimeout(60, TimeUnit.SECONDS)
                 .callTimeout(60, TimeUnit.SECONDS)
                 .addInterceptor(new HeaderInterceptor(context))

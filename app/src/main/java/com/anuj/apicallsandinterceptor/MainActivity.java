@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.anuj.apicallsandinterceptor.network.ApiResponse;
@@ -29,18 +30,21 @@ public class MainActivity extends AppCompatActivity {
                       TODO Handle Loading
                      Show Loading UI
                     */
+                    Log.d("API","Loading");
                     break;
                 case FAILED:
                     /*
                     TODO Handle Failure
                     Show Fail UI
                     */
+                    Log.d("API","Failed");
                     break;
                 case SUCCESS:
                     /*
                     TODO Handle Success
                     Show the UI
                     */
+                    Log.d("API","Success");
                     break;
             }
 
@@ -49,7 +53,10 @@ public class MainActivity extends AppCompatActivity {
         /*
             To send the request just call this function
          */
-        viewModel.sendRequest(this, new Request1("Hello World"));
+        findViewById(R.id.button).setOnClickListener(v->{
+            viewModel.sendRequest(this, new Request1("Hello World"));
+        });
+
 
 
     }

@@ -40,7 +40,9 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     //Add this dependency to your app for network interceptor
-    debugImplementation 'com.facebook.flipper:flipper-network-plugin:0.55.0'
+    implementation 'com.facebook.stetho:stetho:1.5.1'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
+
 
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"

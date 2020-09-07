@@ -7,6 +7,6 @@ public class Constants {
      *
      * Do not forget to replace the BASE URL as required.
      */
-    public static final String BASE_URL = "Enter the API base URL here";
+    public static final String BASE_URL = "https://www.google.com";
 
 }
